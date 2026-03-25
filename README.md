@@ -1,8 +1,8 @@
-# 🚀 CI Pipeline for Node.js Application using Jenkins
+# 🚀 CI Pipeline for Node.js Application using Jenkins (with Webhook)
 
 ## 📌 Project Overview
 
-This project demonstrates a simple **Continuous Integration (CI) pipeline** using Jenkins for a Node.js application. The pipeline automates installing dependencies and running unit tests whenever code is pushed.
+This project demonstrates a **Continuous Integration (CI) pipeline** using Jenkins for a Node.js application. The pipeline is automatically triggered using a GitHub webhook whenever code is pushed.
 
 ---
 
@@ -11,7 +11,7 @@ This project demonstrates a simple **Continuous Integration (CI) pipeline** usin
 * Node.js
 * Jenkins
 * GitHub
-* Jest (for testing)
+* Jest
 
 ---
 
@@ -28,7 +28,7 @@ ci-node-app/
 │
 ├── Jenkinsfile
 ├── package.json
-
+├── .gitignore
 ```
 
 ---
@@ -38,45 +38,57 @@ ci-node-app/
 * Automated dependency installation (`npm install`)
 * Automated test execution (`npm test`)
 * CI pipeline using Jenkins
+* GitHub webhook integration (auto trigger)
 * Real-time build status (Success/Failure)
 
 ---
 
 ## 🔄 CI Pipeline Workflow
 
-1. Jenkins pulls code from GitHub repository
-2. Installs dependencies
-3. Runs unit tests
-4. Displays build result (Success/Failure)
+1. Developer pushes code to GitHub
+2. GitHub webhook triggers Jenkins
+3. Jenkins pulls latest code
+4. Installs dependencies
+5. Runs tests
+6. Displays build result
+
+---
+
+## 🔗 Webhook Integration
+
+* Configured GitHub webhook to trigger Jenkins automatically
+* Used endpoint:
+
+```
+http://<jenkins-ip>:8080/github-webhook/
+```
 
 ---
 
 ## 🧪 Test Cases
 
-The project includes unit tests for password validation:
-
 * Valid password
-* Too short password
-* Missing uppercase letter
+* Too short
+* Missing uppercase
 * Missing number
 
 ---
 
 ## ▶️ How to Run Locally
 
-### 1. Clone the repository
+### Clone repository
 
 ```
 git clone https://github.com/your-username/your-repo-name.git
 ```
 
-### 2. Install dependencies
+### Install dependencies
 
 ```
 npm install
 ```
 
-### 3. Run tests
+### Run tests
 
 ```
 npm test
@@ -86,37 +98,35 @@ npm test
 
 ## ⚙️ Jenkins Setup
 
-1. Create a new Pipeline job in Jenkins
-2. Connect your GitHub repository
-3. Add `Jenkinsfile` in the repo
-4. Run the build
+1. Create a Pipeline job in Jenkins
+2. Connect GitHub repository
+3. Enable webhook trigger
+4. Add Jenkinsfile
+5. Run build
 
 ---
 
 ## 📊 Build Result
 
-* Successful execution of pipeline stages:
-
-  * Install Dependencies ✅
-  * Run Tests ✅
-* Final Status: **SUCCESS**
+* Install stage ✅
+* Test stage ✅
+* Final Status: SUCCESS
 
 ---
 
 ## 🚧 Challenges Faced
 
 * Fixed Jenkinsfile syntax errors
-* Resolved Git branch issues (`master` vs `main`)
-* Debugged pipeline execution errors
+* Resolved Git branch issues
+* Configured webhook integration
+* Debugged pipeline failures
 
 ---
 
 ## 🎯 Conclusion
 
-This project demonstrates how CI pipelines help automate testing and improve code reliability. It serves as a beginner-friendly introduction to DevOps practices using Jenkins.
+This project demonstrates real-world CI automation using Jenkins with webhook integration, improving development workflow and efficiency.
 
 ---
-
-
 
 ---

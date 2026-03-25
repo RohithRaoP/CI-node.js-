@@ -9,7 +9,7 @@ pipeline {
     stage ('test')
     step { 
       sh'npm test'
+               }
+            }
          }
       }
-  }
-}

@@ -4,8 +4,8 @@ pipeline {
     stage ('Install') {
       step {
           sh'npm Install'
+         }
       }
-    }
     stage ('test')
     step { 
       sh'npm test'

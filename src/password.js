@@ -1,7 +1,7 @@
 function isValidPassword(password) {
   if (!password) return false;
 
-  const minLength = 8;
+  const minLength = 9;
   const hasUpperCase = /[A-Z]/.test(password);
   const hasNumber = /[0-9]/.test(password);
 
